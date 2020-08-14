@@ -120,6 +120,7 @@ word embedding
 '''
 # vectors
 _f_model = os.path.join(curdir, 'data', 'words.vector')
+# _f_model = os.path.join(curdir, 'data', 'sgns.wiki.bigram-char')
 if "SYNONYMS_WORD2VEC_BIN_MODEL_ZH_CN" in ENVIRON:
     _f_model = ENVIRON["SYNONYMS_WORD2VEC_BIN_MODEL_ZH_CN"]
 def _load_w2v(model_file=_f_model, binary=True):
@@ -132,7 +133,7 @@ def _load_w2v(model_file=_f_model, binary=True):
     return KeyedVectors.load_word2vec_format(
         model_file, binary=binary, unicode_errors='ignore')
 print(">> Synonyms on loading vectors [%s] ..." % _f_model)
-_vectors = _load_w2v(model_file=_f_model)
+_vectors = _load_w2v(model_file=_f_model, binary= True)
 
 def _get_wv(sentence, ignore=False):
     '''

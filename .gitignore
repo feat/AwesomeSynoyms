@@ -11,3 +11,8 @@ dist/
 synonyms.egg-info
 .vscode/
 build/
+synonyms/data/sgns*
+
+
+
+

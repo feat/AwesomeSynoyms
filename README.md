@@ -1,4 +1,9 @@
-# Synonyms
+#feat 猛人职业搜索模块
+
+通过输入一个搜索词，查找系统中存在的职业或者专长。
+
+
+<!-- # Synonyms
 Chinese Synonyms for Natural Language Processing and Understanding.
 
 最好的中文近义词工具包。
@@ -266,4 +271,4 @@ Google发布的[word2vec](https://code.google.com/archive/p/word2vec/)，该库�
 [jieba: 中文分词](https://github.com/fxsjy/jieba)
 
 # License
-[MIT](./LICENSE)
+[MIT](./LICENSE) -->

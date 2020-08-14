@@ -236,6 +236,8 @@ class KeyedVectors():
     def neighbours(self, word, size = 10):
         """
         Get nearest words with KDTree, ranking by cosine distance
+        余弦相似性比欧式距离更为合理，不关计算机距离，还计算有一个角度值。
+        KDTree是BST在K维空间的扩展
         """
         word = word.strip()
         v = self.word_vec(word)
