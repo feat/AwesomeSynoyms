@@ -11,15 +11,18 @@ import json
 
 from flask import Flask
 
-import find
+import find as f
 
 app = Flask(__name__)
 
 
 @app.route('/<word>')
 def find(word):
-    result = find.find(word)
-    return word + " %s" % (result,)
+    if len(word.strip()) == 0:
+        return ""
+    else: 
+        result = f.findSynonyms(word)
+        return word + " %s" % (result,)
 
 
 

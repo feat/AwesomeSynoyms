@@ -133,7 +133,7 @@ def _load_w2v(model_file=_f_model, binary=True):
     return KeyedVectors.load_word2vec_format(
         model_file, binary=binary, unicode_errors='ignore')
 print(">> Synonyms on loading vectors [%s] ..." % _f_model)
-_vectors = _load_w2v(model_file=_f_model, binary= True)
+_vectors = _load_w2v(model_file=_f_model)
 
 def _get_wv(sentence, ignore=False):
     '''

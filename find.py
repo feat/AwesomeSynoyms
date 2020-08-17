@@ -11,7 +11,7 @@ import json
 from models import kmcha_crawler_model
 
 #use various tech to find the synonym for the input "word"
-def find(word):
+def findSynonyms(word):
     #import the professions file
     with open('./dataset/profession.json', 'rb') as jsonfile:
         profession_json = json.load(jsonfile, encoding='utf-8')
@@ -47,11 +47,11 @@ def find(word):
     result = []
     for profession in profession_set:
         for seg in s_words:
-            if seg == profession:
+            if seg == profession or seg in profession:
                 result.append(profession)
 
     return result
 
 if __name__ == '__main__':
-    print(find(('老师')))
+    print(findSynonyms(('老师')))
 
