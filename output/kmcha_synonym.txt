@@ -44,3 +44,5 @@ cs11.33	程序员	程序猿|码农|程序员们|写代码|女程序员|软件工
 01	老师	王老师|李老师|张老师|刘老师|郑老师|孙老师|赵老师|董老师|老师说|雷老师
 01	老师	王老师|李老师|张老师|刘老师|郑老师|孙老师|赵老师|董老师|老师说|雷老师
 01	favicon.ico	phpinfo.php|vhosts|documentroot|directoryindex|humanid|path1|.scss|addtype|404.html|imagefile
+01	老师	王老师|李老师|张老师|刘老师|郑老师|孙老师|赵老师|董老师|老师说|雷老师
+01	favicon.ico	phpinfo.php|vhosts|documentroot|directoryindex|humanid|path1|.scss|addtype|404.html|imagefile

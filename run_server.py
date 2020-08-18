@@ -15,9 +15,6 @@ import find as f
 
 app = Flask(__name__)
 
-def main():
-    app.run(host="0.0.0.0", port=5000)
-
 
 @app.route('/<word>')
 def find(word):
@@ -28,7 +25,7 @@ def find(word):
         return word + " %s" % (result,)
 
 
-# if __name__ == '__main__':
-#     app.run(host="0.0.0.0", port=5000)
 
-main()    
+if __name__ == '__main__':
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=5000)
