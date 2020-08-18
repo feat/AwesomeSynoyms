@@ -10,6 +10,7 @@
 ## 备注
 由于所用词向量空间不大，机器配置限制，网站数据不足等原因，暂时在策略上参考了 kmcha 的同义词数据。
 
+(该项目借鉴了[Synoyms](https://github.com/huyingxi/Synonyms)的代码)
 
 <!-- # Synonyms
 Chinese Synonyms for Natural Language Processing and Understanding.
