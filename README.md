@@ -5,7 +5,7 @@
 目前可通过，http://141.164.37.60:5000/<word> 查询。比如：[http://141.164.37.60:5000/程序员](http://141.164.37.60:5000/程序员) 查询程序员。
 
 ##安装 
-可以克隆到本地， 运行 pip install -r Requirements.txt 进行安装。
+可以克隆到本地， 运行 pip install -r Requirements.txt 进行安装。运行命令： nohup python run_server.py & 
 
 ##备注
 由于所用词向量空间不大，机器配置限制，网站数据不足等原因，暂时在策略上参考了 kmcha 的同义词数据。
