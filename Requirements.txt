@@ -1,1 +1,2 @@
 synonyms>=3.10
+smart_open
