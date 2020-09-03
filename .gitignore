@@ -2,6 +2,8 @@
 *.swo
 *.sublime-*
 *.pyc
+*.vscode
+.vscode
 __pycache__
 tmp/
 node_modules/
@@ -13,6 +15,7 @@ synonyms.egg-info
 build/
 synonyms/data/sgns*
 output/
-
+synonyms/
+search/wiki.zh*
 
 
