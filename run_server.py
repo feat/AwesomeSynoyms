@@ -18,7 +18,7 @@ app = Flask(__name__)
 
 @app.route('/<word>')
 def find(word):
-    if len(word.strip()) == 0:
+    if len(word.strip()) == 0 or word == 'favicon.ico':
         return ""
     else: 
         result = f.findSynonyms(word)
