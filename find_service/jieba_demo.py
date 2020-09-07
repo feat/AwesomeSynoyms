@@ -46,8 +46,9 @@ print('-'*40)
 print(' TF-IDF')
 print('-'*40)
 
-s = "此外，公司拟对全资子公司吉林欧亚置业有限公司增资4.3亿元，增资后，吉林欧亚置业注册资本由7000万元增加到5亿元。吉林欧亚置业主要经营范围为房地产开发及百货零售等业务。目前在建吉林欧亚城市商业综合体项目。2013年，实现营业收入0万元，实现净利润-139.13万元。"
-for x, w in jieba.analyse.extract_tags(s, withWeight=True):
+s = "我昨天被老师批评了，说考试分太低，拖了全班的后腿"
+for x, w in jieba.analyse.extract_tags(s, withWeight=True, allowPOS=('PER','LOC','TIME',
+'n','s','nr','nt','ns','nw','v','vd','vn','a','ad','an','q','d')):
     print('%s %s' % (x, w))
 
 print('-'*40)
@@ -61,7 +62,7 @@ print('='*40)
 print('4. 词性标注')
 print('-'*40)
 
-words = jieba.posseg.cut("我爱北京天安门")
+words = jieba.posseg.cut("语文老师")
 for word, flag in words:
     print('%s %s' % (word, flag))
 
@@ -71,7 +72,7 @@ print('-'*40)
 print(' 默认模式')
 print('-'*40)
 
-result = jieba.tokenize('永和服装饰品有限公司')
+result = jieba.tokenize('我昨天被老师批评了，说考试分太低，拖了全班的后腿')
 for tk in result:
     print("word %s\t\t start: %d \t\t end:%d" % (tk[0],tk[1],tk[2]))
 
@@ -79,6 +80,6 @@ print('-'*40)
 print(' 搜索模式')
 print('-'*40)
 
-result = jieba.tokenize('永和服装饰品有限公司', mode='search')
+result = jieba.tokenize('我昨天被老师批评了，说考试分太低，拖了全班的后腿', mode='search')
 for tk in result:
     print("word %s\t\t start: %d \t\t end:%d" % (tk[0],tk[1],tk[2]))

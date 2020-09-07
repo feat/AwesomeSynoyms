@@ -5,9 +5,9 @@ import os
 import sys
 from absl import flags
 from absl import logging
-# import jiagu
+# import jieba
 import jieba
-import jieba.posseg as pseg
+# import jieba.posseg as pseg
 import jieba.analyse
 from textrank4zh import TextRank4Keyword, TextRank4Sentence
 import synonyms
@@ -17,6 +17,7 @@ import string
 
 jieba.load_userdict("./dataset/userdict.txt")
 jieba.analyse.set_stop_words("./dataset/stopwords.txt")
+
 
 def search():
     with open('ApplicationsKwords.json', 'r', encoding='utf-8') as fp:
@@ -31,16 +32,16 @@ def search():
 
     text = input_text
     tr4w = TextRank4Keyword()
-    tr4w.analyze(text=text, lower=True, window=1)  # py2中text必须是utf8编码的str或者unicode对象，py3中必须是utf8编码的bytes或者str对象
+    # py2中text必须是utf8编码的str或者unicode对象，py3中必须是utf8编码的bytes或者str对象
+    tr4w.analyze(text=text, lower=True, window=1)
 
-    # print( '关键词：' )
+    # print( '关键
     words = []
     for item in tr4w.get_keywords(5, word_min_len=1):
         words.append(item.word)
     # print(",".join(words))
 
     phrases = tr4w.get_keyphrases(keywords_num=5, min_occur_num=1)
-    # print(",".join(phrases))
 
     phrases.extend(words)
     # print(list(set(phrases+words)))
@@ -66,4 +67,5 @@ def search():
                 print('%s %s', (word, app['text']))
 
 
-search()
+if __name__ == '__main__':
+    print(search())

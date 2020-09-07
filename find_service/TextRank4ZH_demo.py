@@ -11,7 +11,7 @@ except:
     pass
 
 text = "这间酒店位于北京东三环，里面摆放很多雕塑，文艺气息十足。答谢宴于晚上8点开始。"
-text = "晚上睡不着觉，压力大"
+text = "我昨天被老师批评了，说考试分太低，拖了全班的后腿。"
 tr4w = TextRank4Keyword()
 
 tr4w.analyze(text=text, lower=True, window=3)
@@ -40,7 +40,7 @@ for words in tr4w.words_all_filters:
 import codecs
 
 # text = codecs.open('../test/doc/01.txt', 'r', 'utf-8').read()
-text = "晚上睡不着觉，压力大"
+text = "我昨天被老师批评了，说考试分太低，拖了全班的后腿。"
 tr4w = TextRank4Keyword()
 
 tr4w.analyze(text=text, lower=True, window=2)  # py2中text必须是utf8编码的str或者unicode对象，py3中必须是utf8编码的bytes或者str对象

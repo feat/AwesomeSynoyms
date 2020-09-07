@@ -17,5 +17,7 @@ synonyms/data/sgns*
 output/
 synonyms/
 search/wiki.zh*
+find_service/wiki.zh.bin
+find_service/wiki.zh.vec
 
 

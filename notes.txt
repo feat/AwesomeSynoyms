@@ -1,0 +1,2 @@
+alt+shift+f pep8格式化代码
+alt+shift+2 生成注释

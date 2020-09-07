@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+'''
+@文件        :read.py
+@说明        :生成应用场景的关键词
+@时间        :2020/09/07 11:40:13
+@作者        :王力
+@版本        :1.0
+'''
+
+
 from __future__ import print_function
 from __future__ import division
 
@@ -64,17 +75,6 @@ for v in user_expertise_list:
     for v2 in v['applications']:
         applications.append(v2['label'])
         v2['label'] = str(v2['label'].strip(string.punctuation))
-        # v2['label'] = v2['label'].replace("~", "")
-        # v2['label'] = v2['label'].replace("、", "，")
-        # words = pseg.cut(v2['label'], use_paddle=True)  # paddle模式
-        # for word, flag in words:
-        #     print('%s %s' % (word, flag)) 
-        #   
-        # text = thu1.cut(v2['label'], text=True)  # 进行一句话分词
-        # print(text)
-        # file_appl.write(str(v2['label']) + ",")
-
-        # print(text)
 
         text = v2['label']
         tr4w = TextRank4Keyword()
@@ -117,77 +117,9 @@ for v in user_expertise_list:
     file_prof.write("\n")
     # file_appl.write("\n")
 
-    # print(str(applications))
-    # print(str(expertise)+" "+str(applications)+" "+str(available_services)
-    # +" "+str(profession_categories)+"\n")
-
-    # if available_services != []:
-        # print(str(expertise)+" "+str(applications)+" " +
-        # str(available_services) + "\n")
-
 # print(profession_categories_all)
 file_prof.close()
 file_appl.close()
 # print(file_appl_list)
 with open('ApplicationsKwords.json', 'w', encoding='utf-8') as fp:
-    json.dump(file_appl_list, fp)
-
-#############################
-
-##############################
-
-
-def run_jiagu():
-    text = '我今天在市中心酒吧被人欺负了'
-
-    words = jiagu.seg(text)  # 分词
-    print(words)
-
-    words = jiagu.cut(text)  # 分词
-    print(words)
-
-    pos = jiagu.pos(words)  # 词性标注
-    print(pos)
-
-    ner = jiagu.ner(words)  # 命名实体识别
-    print(ner)
-
-    knowledge = jiagu.knowledge(text)
-    print(knowledge)
-
-###############################
-
-def run_jieba():
-    jieba.enable_paddle()# 启动paddle模式。 0.40版之后开始支持，早期版本不支持
-    strs=["我来到北京清华大学","乒乓球拍卖完了","中国科学技术大学","我今天在市中心酒吧被人欺负了"]
-    for str in strs:
-        seg_list = jieba.cut(str,use_paddle=True) # 使用paddle模式
-        print("Paddle Mode: " + '/'.join(list(seg_list)))
-
-    seg_list = jieba.cut("我今天在市中心酒吧被人欺负了", cut_all=True)
-    print("Full Mode: " + "/ ".join(seg_list))  # 全模式
-
-    seg_list = jieba.cut("我今天在市中心酒吧被人欺负了", cut_all=False)
-    print("Default Mode: " + "/ ".join(seg_list))  # 精确模式
-
-    seg_list = jieba.cut("我今天在市中心酒吧被人欺负了")  # 默认是精确模式
-    print(", ".join(seg_list))
-
-    seg_list = jieba.cut_for_search("我今天在市中心酒吧被人欺负了")  # 搜索引擎模式
-    print(", ".join(seg_list)) 
-
-
-    print('-'*40)
-    print(' TextRank')
-    print('-'*40)
-    for x, w in jieba.analyse.textrank("我今天在市中心酒吧被人欺负了", withWeight=True):
-        print('%s %s' % (x, w))
-
-    words = pseg.cut("我今天在市中心酒吧被人欺负了")  # jieba默认模式
-    jieba.enable_paddle()  # 启动paddle模式。 0.40版之后开始支持，早期版本不支持
-    words = pseg.cut("我今天在市中心酒吧被人欺负了",use_paddle=True)  #paddle模式
-    for word, flag in words:
-        print('%s %s' % (word, flag))
-
-# run_jiagu()
-# run_jieba()
+    json.dump(file_appl_list, fp, ensure_ascii=False)

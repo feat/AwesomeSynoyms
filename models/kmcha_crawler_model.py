@@ -26,12 +26,16 @@ def url_parse(url, word):
 
 
 
-def get_words(soup, word):
+def get_words(soup, word, limit=0):
     result = []
     content = soup.find(text= word + "的相似词").parent.parent.find_next_sibling("p").text
     # p = re.compile('(\S+)')
     m = re.findall('(\S+)', content,re.M)
-    result = m[0:10]
+    #if limit = 0, get all values, otherwise get top limit number values
+    if limit is 0:
+        result = m
+    else:
+        result = m[0:limit]
     return result
 
 

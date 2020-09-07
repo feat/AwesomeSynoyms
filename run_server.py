@@ -10,20 +10,30 @@ import synonyms
 import json
 
 from flask import Flask
+import waitress
 
-import find as f
+import find_mengren
+import find_service.feat_search
 
 app = Flask(__name__)
 
 
-@app.route('/<word>')
-def find(word):
+@app.route('/mengren/<word>')
+def find_mengren(word):
     if len(word.strip()) == 0 or word == 'favicon.ico':
         return ""
-    else: 
-        result = f.findSynonyms(word)
+    else:
+        result = find_mengren.find_synonyms(word)
         return word + " %s" % (result,)
 
+
+@app.route('/service/<word>')
+def find_service(word):
+    if len(word.strip()) == 0 or word == 'favicon.ico':
+        return ""
+    else:
+        result = feat_search.search(word)
+        return word + " %s" % (result,)
 
 
 if __name__ == '__main__':
