@@ -1,7 +1,6 @@
 synonyms>=3.10
 smart_open
-flask
-json
+flaskgi t
 waitress
 jieba
 ltp
