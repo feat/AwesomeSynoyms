@@ -6,20 +6,19 @@ import sys
 from absl import flags
 from absl import logging
 
-import synonyms
 import json
 
 from flask import Flask
 import waitress
 
 import find_mengren
-import find_service.feat_search
+from find_service import feat_search
 
 app = Flask(__name__)
 
 
 @app.route('/mengren/<word>')
-def find_mengren(word):
+def mengren(word):
     if len(word.strip()) == 0 or word == 'favicon.ico':
         return ""
     else:
@@ -28,7 +27,7 @@ def find_mengren(word):
 
 
 @app.route('/service/<word>')
-def find_service(word):
+def service(word):
     if len(word.strip()) == 0 or word == 'favicon.ico':
         return ""
     else:
