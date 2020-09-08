@@ -12,8 +12,8 @@
 可以克隆到本地， 运行 pip install -r Requirements.txt 进行安装。运行命令： nohup python run_server.py & 
 
 ## 备注
-由于所用词向量空间不大，机器配置限制，网站数据不足等原因，暂时在策略上参考了 kmcha 的同义词数据。
-由于jieba模块的bug(不支持一个词多个词性，但是提供的vocab.txt文件却有不少多个词性的词组，加载时，出现错误), 需要注释掉"site-packages/jieba/posseg/__init__.py"文件(该文件可根据错误提示找到) 109行的两行代码，替换为 "continue",即屏蔽掉该错误提示。
+* 由于所用词向量空间不大，机器配置限制，网站数据不足等原因，暂时在策略上参考了 kmcha 的同义词数据。
+* 由于jieba模块的bug(不支持一个词多个词性，但是提供的vocab.txt文件却有不少多个词性的词组，加载时，出现错误), 需要注释掉"site-packages/jieba/posseg/__init__.py"文件(该文件可根据错误提示找到) 109行的两行代码，替换为 "continue",即屏蔽掉该错误提示。
 
 (该项目借鉴了[Synoyms](https://github.com/huyingxi/Synonyms)的代码)
 
